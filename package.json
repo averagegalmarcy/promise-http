@@ -2,12 +2,13 @@
   "name": "promise-http",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "test": "jest",
     "test:watch": "jest --watchAll",
     "lint": "eslint .",
-    "pretest": "npm run lint"
+    "pretest": "npm run lint",
+    "start": "nodemon server.js"
   },
   "repository": {
     "type": "git",
@@ -22,6 +23,10 @@
   "homepage": "https://github.com/averagegalmarcy/promise-http#readme",
   "devDependencies": {
     "eslint": "^5.12.0",
-    "jest": "^23.6.0"
+    "jest": "^23.6.0",
+    "nodemon": "^1.18.9"
+  },
+  "dependencies": {
+    "superagent": "^4.1.0"
   }
 }

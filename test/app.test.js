@@ -15,26 +15,26 @@ const app = require('../lib/app');
 jest.mock('../lib/rickAndMortyApi.js', () => ({
   getCharacters() {
     return Promise.resolve([
-      'Rick Sanchez',
-      'Morty Smith',
-      'Summer Smith',
-      'Beth Smith',
-      'Jerry Smith',
-      'Abadango Cluster Princess',
-      'Abradolf Lincler',
-      'Adjudicator Rick',
-      'Agency Director',
-      'Alan Rails',
-      'Albert Einstein',
-      'Alexander',
-      'Alien Googah',
-      'Alien Morty',
-      'Alien Rick',
-      'Amish Cyborg',
-      'Annie',
-      'Antenna Morty',
-      'Antenna Rick',
-      'Ants in my Eyes Johnson'
+      {
+        name: 'Rick Sanchez',
+        species: 'Human',
+        status: 'Alive'
+      },
+      {
+        name: 'Morty Smith',
+        species: 'Human',
+        status: 'Alive'
+      },
+      {
+        name: 'Beth Sanchez',
+        species: 'Human',
+        status: 'Alive'
+      },
+      {
+        name: 'Summer Smith',
+        species: 'Human',
+        status: 'Alive'
+      }
     ]);
   }
 }));

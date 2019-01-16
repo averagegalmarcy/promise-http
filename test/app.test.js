@@ -1,6 +1,15 @@
 const request = require('supertest');
 const app = require('../lib/app');
 
+jest.mock('../lib/rickAndMortyApi.js', () => ({
+  getCharacter() {
+    return Promise.resolve({
+      name: 'Rick Sanchez',
+      status: 'Alive',
+      species: 'Human'
+    });
+  }
+}));
 
 describe('get rick and notes', () => {
   it('gets character and post to browser', () => {

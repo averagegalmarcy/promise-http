@@ -12,52 +12,67 @@ const app = require('../lib/app');
 //   }
 // }));
 
-jest.mock('../lib/rickAndMortyApi.js', () => ({
-  getCharacters() {
-    return Promise.resolve([
-      {
-        name: 'Rick Sanchez',
-        species: 'Human',
-        status: 'Alive'
-      },
-      {
-        name: 'Morty Smith',
-        species: 'Human',
-        status: 'Alive'
-      },
-      {
-        name: 'Beth Sanchez',
-        species: 'Human',
-        status: 'Alive'
-      },
-      {
-        name: 'Summer Smith',
-        species: 'Human',
-        status: 'Alive'
-      }
-    ]);
-  }
-}));
+// jest.mock('../lib/rickAndMortyApi.js', () => ({
+//   getCharacters() {
+//     return Promise.resolve([
+//       {
+//         name: 'Rick Sanchez',
+//         species: 'Human',
+//         status: 'Alive'
+//       },
+//       {
+//         name: 'Morty Smith',
+//         species: 'Human',
+//         status: 'Alive'
+//       },
+//       {
+//         name: 'Beth Sanchez',
+//         species: 'Human',
+//         status: 'Alive'
+//       },
+//       {
+//         name: 'Summer S',
+//         species: 'Human',
+//         status: 'Alive'
+//       }
+//     ]);
+//   }
+// }));
 
-// describe('get rick and notes', () => {
-//   it('result', () => {
+// describe('app', () => {
+//   it('gets a character by id', () => {
 //     return request(app)
-//       .get('/characters/')
+//       .get('/character/1')
 //       .then(res => {
-//         expect(res.text).toEqual('Got the List of Characters');
+//         expect(res.body).toEqual({
+//           name: 'Rick Sanchez',
+//           species: 'Human',
+//           status: 'Alive'
+//         });
 //       });
 //   });
 // });
 
-describe('get rick and notes', () => {
-  it('gets character and post to browser', () => {
+describe('app', () => {
+  it('it post some data about character', () => {
     return request(app)
-      .get('/characters/')
+      .post('/characters')
+      .send({ characterId: 1234, note: 'My favorite character' })
       .then(res => {
-        expect(res.text).toString('Morty Smith');
+        expect(res.status).toEqual(204);
       });
   });
 });
+
+// describe('get rick and notes', () => {
+//   it('gets character and post to browser', () => {
+//     return request(app)
+//       .get('/characters/')
+//       .then(res => {
+//         expect(res.text).toString('Morty Smith');
+//       });
+//   });
+// });
 // describe('app', () => {
 //   it('it post some data', () => {
 //     return request(app)

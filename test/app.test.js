@@ -44,28 +44,7 @@ describe('get rick and notes', () => {
     return request(app)
       .get('/characters/')
       .then(res => {
-        expect(res.body).toEqual([
-          'Rick Sanchez',
-          'Morty Smith',
-          'Summer Smith',
-          'Beth Smith',
-          'Jerry Smith',
-          'Abadango Cluster Princess',
-          'Abradolf Lincler',
-          'Adjudicator Rick',
-          'Agency Director',
-          'Alan Rails',
-          'Albert Einstein',
-          'Alexander',
-          'Alien Googah',
-          'Alien Morty',
-          'Alien Rick',
-          'Amish Cyborg',
-          'Annie',
-          'Antenna Morty',
-          'Antenna Rick',
-          'Ants in my Eyes Johnson'
-        ]);
+        expect(res.body).toHaveLength(20);
       });
   });
 });

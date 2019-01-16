@@ -13,4 +13,5 @@ request
     }));
   })
   .then(originRess => originRess.map(originRes => originRes.body))
+  /* eslint-disable-next-line*/
   .then(origins => console.log(origins));

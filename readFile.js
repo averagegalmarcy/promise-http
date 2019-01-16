@@ -18,6 +18,7 @@ const fsPromises = require('fs').promises;
 module.exports = (src, dst) => {
   return fsPromises.readFile(src) 
     .then(data => fsPromises.writeFile(dst, data))
+    /* eslint-disable-next-line*/
     .catch(err => console.error(err));
 };
 
@@ -29,4 +30,5 @@ const readPromise = src => new Promise((resolve, reject) => {
 });
 
 readPromise('./http.md')
+/* eslint-disable-next-line*/
   .then(data => console.log(data));

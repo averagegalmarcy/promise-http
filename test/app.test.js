@@ -39,12 +39,22 @@ jest.mock('../lib/rickAndMortyApi.js', () => ({
   }
 }));
 
+// describe('get rick and notes', () => {
+//   it('result', () => {
+//     return request(app)
+//       .get('/characters/')
+//       .then(res => {
+//         expect(res.text).toEqual('Got the List of Characters');
+//       });
+//   });
+// });
+
 describe('get rick and notes', () => {
   it('gets character and post to browser', () => {
     return request(app)
       .get('/characters/')
       .then(res => {
-        expect(res.body).toHaveLength(20);
+        expect(res.text).toString('Morty Smith');
       });
   });
 });

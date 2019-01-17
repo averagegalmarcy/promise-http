@@ -40,6 +40,21 @@ const app = require('../lib/app');
 // }));
 
 // describe('app', () => {
+//   beforeEach(() => {
+//     return request(app)
+//       .post('/note')
+//       .send({ text: 'This is a note' });
+//   });
+// });
+// it('gets a character by id', () => {
+//   return request(app)
+//     .get('/characters/1234')
+//     .then(res => {
+//       expect(res.text).toString('1234 [My favorite character]');
+//     });
+// });
+
+// describe('app', () => {
 //   it('gets a character by id', () => {
 //     return request(app)
 //       .get('/character/1')
@@ -59,7 +74,7 @@ describe('app', () => {
       .post('/characters')
       .send({ characterId: 1234, note: 'My favorite character' })
       .then(res => {
-        expect(res.status).toEqual(204);
+        expect(res.status).toEqual(200);
       });
   });
 });
